@@ -1,0 +1,110 @@
+#include<raylib.h>
+#include<iostream>
+
+using namespace std;
+
+const int WINDOW_WIDTH = 1280;
+const int WINDOW_HEIGTH = 720;
+
+
+struct Ball
+{
+	float x, y;
+	float radius;
+	float velX, velY;
+};
+
+struct Paddle
+{
+	float x, y;
+	float width, heigth;
+	float speed;
+};
+
+int main()
+{
+	InitWindow(WINDOW_WIDTH, WINDOW_HEIGTH, "Pong");
+	Ball ball;
+	ball.x = WINDOW_WIDTH / 2;
+	ball.y = WINDOW_HEIGTH / 2;
+	ball.velX = 300;
+	ball.velY = 300;
+	ball.radius = 10;
+
+	Paddle leftPaddle;
+	leftPaddle.x = 50;
+	leftPaddle.y = WINDOW_HEIGTH / 2 - 50;
+	leftPaddle.width = 20;
+	leftPaddle.heigth = 100;
+	leftPaddle.speed = 300;
+
+	Paddle rightPaddle;
+	rightPaddle.x = WINDOW_WIDTH - 70;
+	rightPaddle.y = WINDOW_HEIGTH / 2 - 50;
+	rightPaddle.width = 20;
+	rightPaddle.heigth = 100;
+	rightPaddle.speed = 270;
+
+
+	while (!WindowShouldClose())
+	{
+		float dt = GetFrameTime();
+
+		ball.x += ball.velX * dt;
+		ball.y += ball.velY * dt;
+
+		if (ball.y<ball.radius || ball.y>WINDOW_HEIGTH - ball.radius)
+			ball.velY *= -1;
+
+		if (ball.x<ball.radius || ball.x>WINDOW_WIDTH - ball.radius)
+		{
+			ball.x = WINDOW_WIDTH / 2;
+			ball.y = WINDOW_HEIGTH / 2;
+			ball.velX *= -1;
+
+		}
+
+		if (IsKeyDown(KEY_W) && leftPaddle.y > 0)
+		{
+			leftPaddle.y -= leftPaddle.speed * dt;
+		}
+		if (IsKeyDown(KEY_S) && leftPaddle.y < WINDOW_HEIGTH - leftPaddle.heigth)
+		{
+			leftPaddle.y += leftPaddle.speed * dt;
+		}
+
+		if (ball.y < rightPaddle.y + rightPaddle.heigth / 2 && rightPaddle.y > 0) 
+		{
+			rightPaddle.y -= rightPaddle.speed * dt;
+			
+		}
+		if (ball.y > rightPaddle.y + rightPaddle.heigth / 2 && rightPaddle.y < WINDOW_HEIGTH - rightPaddle.heigth)
+		{
+			rightPaddle.y += rightPaddle.speed * dt;
+		}
+
+		if (ball.x - ball.radius <= leftPaddle.x + leftPaddle.width && ball.y >= leftPaddle.y && ball.y <= leftPaddle.y + leftPaddle.heigth)
+		{
+			ball.velX *= -1;
+		}
+		if (ball.x - ball.radius >= rightPaddle.x - rightPaddle.width && ball.y >= rightPaddle.y && ball.y <= rightPaddle.y + rightPaddle.heigth)
+		{
+			ball.velX *= -1;
+		}
+
+		BeginDrawing();
+		ClearBackground(BLACK);
+
+		DrawCircle(static_cast<int>(ball.x), static_cast<int>(ball.y), ball.radius, WHITE);
+
+		DrawRectangle(static_cast<int>(leftPaddle.x), static_cast<int>(leftPaddle.y), leftPaddle.width, leftPaddle.heigth, WHITE);
+		DrawRectangle(static_cast<int>(rightPaddle.x), static_cast<int>(rightPaddle.y), rightPaddle.width, rightPaddle.heigth, WHITE);
+
+
+		DrawFPS(2, 2);
+		EndDrawing();
+	}
+
+	CloseWindow();
+	return 0;
+}

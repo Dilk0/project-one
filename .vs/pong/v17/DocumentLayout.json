@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\raylib\\project one\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD1BA8B-9E19-4961-8915-CD333DE769E5}|pong.vcxproj|D:\\raylib\\project one\\Paddle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5CD1BA8B-9E19-4961-8915-CD333DE769E5}|pong.vcxproj|solutionrelative:Paddle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD1BA8B-9E19-4961-8915-CD333DE769E5}|pong.vcxproj|D:\\raylib\\project one\\Ball.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5CD1BA8B-9E19-4961-8915-CD333DE769E5}|pong.vcxproj|solutionrelative:Ball.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD1BA8B-9E19-4961-8915-CD333DE769E5}|pong.vcxproj|D:\\raylib\\project one\\Paddle.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5CD1BA8B-9E19-4961-8915-CD333DE769E5}|pong.vcxproj|solutionrelative:Paddle.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD1BA8B-9E19-4961-8915-CD333DE769E5}|pong.vcxproj|D:\\raylib\\project one\\pong.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5CD1BA8B-9E19-4961-8915-CD333DE769E5}|pong.vcxproj|solutionrelative:pong.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD1BA8B-9E19-4961-8915-CD333DE769E5}|pong.vcxproj|D:\\raylib\\project one\\Ball.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5CD1BA8B-9E19-4961-8915-CD333DE769E5}|pong.vcxproj|solutionrelative:Ball.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Paddle.cpp",
+              "DocumentMoniker": "D:\\raylib\\project one\\Paddle.cpp",
+              "RelativeDocumentMoniker": "Paddle.cpp",
+              "ToolTip": "D:\\raylib\\project one\\Paddle.cpp",
+              "RelativeToolTip": "Paddle.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-23T04:40:42.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Paddle.hpp",
+              "DocumentMoniker": "D:\\raylib\\project one\\Paddle.hpp",
+              "RelativeDocumentMoniker": "Paddle.hpp",
+              "ToolTip": "D:\\raylib\\project one\\Paddle.hpp",
+              "RelativeToolTip": "Paddle.hpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-23T04:34:55.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ball.cpp",
+              "DocumentMoniker": "D:\\raylib\\project one\\Ball.cpp",
+              "RelativeDocumentMoniker": "Ball.cpp",
+              "ToolTip": "D:\\raylib\\project one\\Ball.cpp",
+              "RelativeToolTip": "Ball.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAvwAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-23T04:15:03.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Ball.hpp",
+              "DocumentMoniker": "D:\\raylib\\project one\\Ball.hpp",
+              "RelativeDocumentMoniker": "Ball.hpp",
+              "ToolTip": "D:\\raylib\\project one\\Ball.hpp",
+              "RelativeToolTip": "Ball.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-23T04:12:09.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "pong.cpp",
+              "DocumentMoniker": "D:\\raylib\\project one\\pong.cpp",
+              "RelativeDocumentMoniker": "pong.cpp",
+              "ToolTip": "D:\\raylib\\project one\\pong.cpp",
+              "RelativeToolTip": "pong.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-17T11:35:28.799Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

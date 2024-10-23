@@ -1,0 +1,140 @@
+#include<raylib.h>
+
+const int WINDOW_HEIGHT = 720;
+const int WINDOW_WIDTH = 1280;
+
+class Paddle {
+public:
+	float posX, posY;
+	float speed;
+	float width, height;
+	Rectangle rect;
+
+	Paddle(float posX, float posY)
+	{
+		this->posX = posX;
+		this->posY = posY;
+		speed = 300;
+		width = 20;
+		height = 120;
+		rect = { posX,posY,width,height };
+	}
+	void update();
+	void draw();
+	void colision();
+	void ai(float ballY);
+};
+
+void Paddle::update()
+{
+	float dt = GetFrameTime();
+
+	if (IsKeyDown(KEY_W) && posY > 0)
+		posY -= speed * dt;
+	if (IsKeyDown(KEY_S) && posY + height < WINDOW_HEIGHT)
+		posY += speed * dt;
+
+}
+
+void Paddle::draw()
+{
+	DrawRectangle(static_cast<int>(posX), static_cast<int>(posY), width, height, WHITE);
+}
+
+void Paddle::colision()
+{
+	this->rect = { posX,posY,width,height };
+}
+
+void Paddle::ai(float ballY)
+{
+	float dt = GetFrameTime();
+
+	if (ballY > posY + height / 2 && posY + height < WINDOW_HEIGHT)
+	{
+		posY += speed * dt;
+	}
+	if (ballY < posY + height / 2 && posY > 0)
+	{
+		posY -= speed * dt;
+	}
+}
+
+class Ball {
+public:
+	float posX, posY;
+	float velX, velY;
+	float radius;
+
+	Ball()
+	{
+		posX = WINDOW_WIDTH / 2;
+		posY = WINDOW_HEIGHT / 2;
+		radius = 10;
+		velX = 300;
+		velY = 300;
+	}
+
+	void draw();
+	void update();
+};
+
+void Ball::draw()
+{
+	DrawCircle(static_cast<int>(posX), static_cast<int>(posY), radius, WHITE);
+}
+
+void Ball::update()
+{
+	float dt = GetFrameTime();
+	posX -= velX * dt;
+	posY += velY * dt;
+
+	if (posY < 0 || posY + radius >= WINDOW_HEIGHT)
+		velY *= -1;
+
+	if (posX < 0 || posX + radius > WINDOW_WIDTH)
+	{
+		velX *= -1;
+		posX = WINDOW_WIDTH / 2;
+		posY = WINDOW_HEIGHT / 2;
+	}
+}
+
+
+int main()
+{
+	InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "pong");
+
+	Paddle leftPaddle(30, WINDOW_HEIGHT / 2 - 50);
+	Paddle rightPaddle(WINDOW_WIDTH - 50, WINDOW_HEIGHT / 2 - 50);
+	Ball ball;
+
+	while (!WindowShouldClose())
+	{
+		
+		if (CheckCollisionCircleRec(Vector2{ ball.posX,ball.posY }, ball.radius, leftPaddle.rect))
+			ball.velX *= -1;
+		if (CheckCollisionCircleRec(Vector2{ ball.posX,ball.posY }, ball.radius, rightPaddle.rect))
+			ball.velX *= -1;
+
+		leftPaddle.update();
+		rightPaddle.ai(ball.posY);
+		ball.update();
+		leftPaddle.colision();
+		rightPaddle.colision();
+
+		BeginDrawing();
+		ClearBackground(BLACK);
+		leftPaddle.draw();
+		ball.draw();
+		rightPaddle.draw();
+		DrawFPS(5, 5);
+		EndDrawing();
+
+	}
+
+	CloseWindow();
+}
+
+

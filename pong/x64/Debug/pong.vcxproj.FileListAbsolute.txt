@@ -1,0 +1,6 @@
+D:\raylib\pong\x64\Debug\raylib.dll
+D:\raylib\pong\x64\Debug\glfw3.dll
+D:\raylib\pong\pong\x64\Debug\pong.vcxproj.Up2Date
+D:\raylib\project one\x64\Debug\raylib.dll
+D:\raylib\project one\x64\Debug\glfw3.dll
+D:\raylib\project one\pong\x64\Debug\pong.vcxproj.Up2Date
